@@ -56,17 +56,11 @@ Solução:
 ```python
 class Solution:
     def capitalizeTitle(self, title: str) -> str:
-
-        words = title.split()
-        new_words = []
-
-        for i in words:
-            if len(i) <= 2:
-                i = i.lower()
+        li = title.split()
+        for i, l in enumerate(li):
+            if len(l) <= 2:
+                li[i] = l.lower()
             else:
-                i = i.title()
-            
-            new_words.append(i)
-
-        return str(new_words)
+                li[i] = l.title()
+        return ' '.join(li)
 ```
